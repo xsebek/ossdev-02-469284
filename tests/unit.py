@@ -33,11 +33,11 @@ class PrimeExamples(unittest.TestCase):
         self.assertTrue(is_prime(2))
 
     def test_prime_minus_2(self):
-        """Some people may disagree here, but -2 is an ideal prime (pun intended). """
+        # Some people may disagree here, but -2 is an ideal prime (pun intended).
         self.assertTrue(is_prime(-2))
 
     def test_primality_example(self):
-        """Test the example from documentation. """
+        # Test the example from documentation.
         self.assertEqual(list(primes(11, 42)), [11, 13, 17, 19, 23, 29, 31, 37, 41])
 
 
