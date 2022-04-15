@@ -8,12 +8,13 @@ def fact(i: int) -> int:
 
 def is_prime(i: int) -> bool:
     """Check primality using Wilson. """
-    return (fact(i - 1) + 1) % i == 0
+    i = abs(i)
+    return i not in [0, 1] and (fact(i - 1) + 1) % i == 0
 
 
 def primes(s: int, e: int) -> Iterator[int]:
     """List primes in interval. """
-    return filter(lambda x: is_prime(abs(x)), range(s, e))
+    return filter(is_prime, range(s, e))
 
 
 def main():
@@ -22,5 +23,5 @@ def main():
         print(f"\nExample {argv[0]} 11 42")
         exit(1)
 
-    print(list(primes(int(argv[1]), int(argv[2]))))
-
+    for p in primes(int(argv[1]), int(argv[2])):
+        print(p)
