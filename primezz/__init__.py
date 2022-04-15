@@ -1,4 +1,6 @@
-__all__=[
+from primezz.primezz import *
+
+__all__ = [
     'fact',
     'is_prime',
     'primes',
